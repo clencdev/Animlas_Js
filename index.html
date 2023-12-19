@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" type="text/css" >
+    <title>Document</title>
+</head>
+<body>
+
+    <form id="filterForm">
+        <label for="categorySelect">Choisissez une catégorie :</label>
+        <select id="categorySelect">
+            <option value="tous">Tous</option>
+            <option value="terrestre">Terrestre</option>
+            <option value="aquatique">Aquatique</option>
+            <option value="volant">Volant</option>
+        </select>
+        <button type="submit">Filtrer</button>
+    </form>
+
+<div id="animals"></div>
+
+<form id="addAnimalForm">
+    <h2>Ajouter un Animal</h2>
+    <label for="nom">Nom:</label>
+    <input type="text" id="nom" name="nom" required>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" required></textarea>
+
+    <label for="categorie">Catégorie:</label>
+    <select id="categorie" name="categorie" required>
+        <option value="terrestre">Terrestre</option>
+        <option value="aquatique">Aquatique</option>
+        <option value="volant">Volant</option>
+    </select>
+
+    <label for="image">Lien de l'image:</label>
+    <input type="url" id="image" name="image" required>
+
+    <button type="submit">Ajouter</button>
+</form>
+
+
+    <script src="js/Animal.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
