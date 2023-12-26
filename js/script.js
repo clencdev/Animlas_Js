@@ -13,11 +13,11 @@ let animaux = [chien, chat, oiseau, loup, poisson, requin, renard];
 console.log(animaux);
 
 function initialiserDonnees() {
-    if (localStorage.getItem('animaux')) {
-        animaux = JSON.parse(localStorage.getItem('animaux'));
+    if (localStorage.getItem('animauxData'))  {
+        animaux = JSON.parse(localStorage.getItem('animauxData'));
     } else {
         
-        localStorage.setItem('animaux', JSON.stringify(animaux));
+        localStorage.setItem('animauxData', JSON.stringify(animaux));
     }
 }
 
@@ -60,7 +60,7 @@ function displayAnimals(filter = null) {
     })
 }
 
-document.querySelector('#filterForm').addEventListener('submit', function(e) {
+document.querySelector('#addAnimalForm').addEventListener('submit', function(e) {
     e.preventDefault(); // Empêche le rechargement de la page
     let selectedCategory = document.querySelector('#categorySelect').value;
     displayAnimals(selectedCategory);
@@ -81,8 +81,9 @@ document.querySelector('#addAnimalForm').addEventListener('submit', function(e) 
     // Ajout du nouvel animal au tableau et mise à jour de l'affichage
     animaux.push(nouvelAnimal);
 
-    localStorage.setItem('animaux', JSON.stringify(animaux));
+    localStorage.setItem('animauxData', JSON.stringify(animaux));
     displayAnimals();
 });
 
-displayAnimals()
+initialiserDonnees();
+displayAnimals();
